@@ -8,3 +8,5 @@ https://www.kiteworks.com/best-practices-checklist-how-to-secure-web-forms/
 
 Pages:
 Home, About Us, Services, Resources, Contact Page, Ask a Question
+
+**Make sure to read commit comments!**

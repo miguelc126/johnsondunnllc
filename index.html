@@ -3,24 +3,28 @@
 <head>
 <title>Home Page</title>
 <link rel="stylesheet" href="styles.css">
+<script defer src="site-script.js"></script>
 </head>
 <body>
+    <!--Home Page & Nav Bar-->
     <nav class="nav-bar">
-            <a class="individual-nav-bar" href="#home">Home</a>
-            <a class="individual-nav-bar" href="#aboutus">About Us</a>
-            <a class="individual-nav-bar" href="#services">Services</a>
-            <a class="individual-nav-bar" href="#contactus">Contact Us</a>
+            <a class="individual-nav-bar" data-target="home">Home</a>
+            <a class="individual-nav-bar" data-target="about-us">About Us</a>
+            <a class="individual-nav-bar" data-target="services">Services</a>
+            <a class="individual-nav-bar" data-target="">Contact Us</a> <!--No Data target because section has not been created-->
     </nav>
+    <section id="home"> <!--No class for home. It is not a default section-->
+        <div class="home-header">
+            Johnson and Dunn Construction Consultants
+        </div>
 
-    <div class="home-header">
-        Johnson and Dunn Construction Consultants
-    </div>
+        <div>
+            <img src="placeholder-image.jpg" alt="placeholder-image" class="home-image">
+        </div>
+    </section>
 
-    <div>
-        <img src="placeholder-image.jpg" alt="placeholder-image" class="home-image">
-    </div>
-
-    <div class="default-div">
+    <!--About Us Section-->
+    <section class="default-section" id="about-us">
         <h1 class="about-us-header">About Us</h1>
         <div class="about-us-container">
             <p class="about-us-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed tellus bibendum, sollicitudin felis dictum, luctus turpis. Mauris eros enim, mollis sed massa ut, aliquet commodo elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
@@ -34,10 +38,11 @@
                 <p class="mission-statement-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed tellus bibendum, sollicitudin felis dictum, luctus turpis. Mauris eros enim, mollis sed massa ut, aliquet commodo elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="default-div">
+    <!--Services Section-->
+    <section class="default-section" id="services">
         <h1 class="services-heading">Our Services</h1>
-    </div>
+    </section>
 </body>
 </html>
