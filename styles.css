@@ -1,112 +1,277 @@
-/* Default CSS tags & Site-wide CSS */
-
-a {
-  text-decoration: none;
-  color: inherit;
+/* CSS Variables for consistent theming and easy updates */
+:root {
+    --primary-color: #007bff;      /* Main blue color used throughout the site */
+    --primary-dark: #0056b3;       /* Darker blue for hover states and contrast */
+    --text-color: #333;
+    --background-color: #f4f4f9;
+    --white: #fff;
+    --spacing-unit: 1rem;          /* Base unit for consistent spacing */
+    --container-width: 1200px;
+    --transition-speed: 0.3s;      /* Consistent animation speed */
 }
 
-body { 
-  margin: 0;
-  padding-top: 90px; /* Needed for nav bar spacing at the top of the page */ 
+/* CSS Reset - Ensures consistent styling across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.default-section {
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-top: 20%;
+/* Base HTML settings */
+html {
+    scroll-behavior: smooth;  /* Enables smooth scrolling for anchor links */
+    font-size: 16px;         /* Base font size for rem units */
 }
 
-/*Home Page & Nav Bar */
+/* Body styles - Sets the main document styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-top: 90px;
+}
 
+/* Global image settings */
+img {
+    max-width: 100%;
+    height: auto;            /* Maintain aspect ratio */
+    display: block;          /* Remove default inline spacing */
+}
+
+/* Navigation Bar Styles */
 .nav-bar {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1.5em 0;
-  background-color: #007bff;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;          /* Ensures nav stays above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
 }
 
-.home-header {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #007bff;
-  color: white;
-  font-size: 1.5em;
-  padding: 40px;
-  width: 80%;
-  margin: 120px auto;
+/* Navigation container - centers and spaces navigation items */
+.nav-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;              /* Space between nav items */
+    padding: 0 var(--spacing-unit);
 }
 
+/* Individual navigation links */
 .individual-nav-bar {
-  background-color: lightblue;
-  padding: 15px 35px;
-  margin: 0 40px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  width: 10%;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;     /* Rounded corners */
+    font-weight: 500;        /* Slightly bold text */
+    transition: all var(--transition-speed) ease;  /* Smooth hover effects */
 }
 
-.individual-nav-bar:hover {
-  background-color: rgb(44, 168, 209);
-  color: white;
+/* Navigation hover and focus states */
+.individual-nav-bar:hover,
+.individual-nav-bar:focus {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);  /* Slight lift effect */
 }
 
+/* Home Section Styles */
+.home-section {
+    padding: 4rem var(--spacing-unit);
+    text-align: center;
+}
+
+/* Main header container */
+.home-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Main heading styles */
+.home-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Subtitle styles */
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;          
+}
+
+/* Home image container */
+.home-image-container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 var(--spacing-unit);
+}
+
+/* Home image styles */
 .home-image {
-  margin-left: auto;
-  margin-right: auto;
-  height: 75%;
-  width: 75%;
-  display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-/* About Us */
-
-.about-us-header {
-  font-size: 2.5em;
-  margin-bottom: -10%;
+/* Main Section Styles */
+.default-section {
+    max-width: var(--container-width);
+    margin: 4rem auto;
+    padding: 0 var(--spacing-unit);
 }
 
-.about-us-text {
-  font-size: 1.2em;
-  max-width: 100%
+/* Section headers */
+.section-header {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
 }
 
-.about-us-container {
-  display: flex;
-  align-items: center;
+.section-header.centered {
+    text-align: center;
 }
 
-.about-us-image {
-  height: 75%;
-  width: 90%;
+/* Content block layout */
+.content-block {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin: 4rem 0;
 }
 
-.mission-statement-header {
-  font-size: 2.5em;
-  margin-bottom: 10%
+/* Reversed content block (image on left) */
+.content-block.reverse {
+    flex-direction: row-reverse;
 }
 
+/* Text content container */
+.text-content {
+    flex: 1;                /* Takes up equal space with image */
+}
+
+/* Text styles for About Us and Mission Statement */
+.about-us-text,
 .mission-statement-text {
-  font-size: 1.2em;
-  max-width: 100%
+    font-size: 1.1rem;
+    line-height: 1.8;       /* Improved readability */
 }
 
-.mission-statement-image {
-  height: 75%;
-  width: 90%;
+/* Image wrapper */
+.section-image-wrapper {
+    flex: 1;
+    max-width: 500px;
 }
 
-/* Services */
+/* Section image styles */
+.section-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;      /* Maintains aspect ratio while filling space */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed) ease;
+}
 
-.services-heading {
-  text-align: center;
+/* Image hover effect */
+.section-image:hover {
+    transform: translateY(-5px);  /* Slight lift on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsive Design - Larger Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    :root {
+        --container-width: 90%;   /* Smaller container on smaller screens */
+    }
+    
+    .content-block {
+        gap: 2rem;               /* Reduced spacing */
+    }
+
+    .section-image {
+        height: 350px;          /* Smaller image height */
+    }
+}
+
+/* Responsive Design - Tablets and Large Phones */
+@media (max-width: 768px) {
+    /* Stack content vertically on smaller screens */
+    .content-block,
+    .content-block.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Full width images on mobile */
+    .section-image-wrapper {
+        max-width: 100%;
+    }
+
+    .section-image {
+        height: 300px;
+    }
+
+    /* Smaller text sizes for mobile */
+    .home-header h1 {
+        font-size: 2rem;
+    }
+
+    .section-header {
+        font-size: 2rem;
+    }
+
+    /* Adjusted navigation for mobile */
+    .nav-container {
+        gap: 1rem;
+    }
+
+    .individual-nav-bar {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design - Small Phones */
+@media (max-width: 480px) {
+    body {
+        margin-top: 70px;        /* Smaller top margin for mobile */
+    }
+
+    /* Further reduced sizes for smallest screens */
+    .home-header {
+        padding: 2rem 1rem;
+    }
+
+    .home-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .section-header {
+        font-size: 1.75rem;
+    }
+
+    .about-us-text,
+    .mission-statement-text {
+        font-size: 1rem;
+    }
+
+    .section-image {
+        height: 250px;
+    }
 }
