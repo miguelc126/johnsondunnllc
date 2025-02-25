@@ -185,6 +185,44 @@ img {
     transform: translateY(-5px);  /* Slight lift on hover */
 }
 
+/* Services CSS */
+.service-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 1000px;
+    margin-top: 10px;
+    border: 8px solid black; /*temp attribute*/
+    position: relative;
+}
+.service-item {
+    color: var(--white);
+    min-height: 700px;
+    min-width: 350px;
+    margin: 5px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    position: relative;
+}
+.service-item .icon-box {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-dark);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+.service-item .icon-box icon {
+    height: 100px;
+    width: 100px;
+}
+    
 /* Footer Styles */
 footer {
     background-color: var(--primary-color);

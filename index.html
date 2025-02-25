@@ -14,15 +14,16 @@
     <header>
         <nav class="nav-bar" aria-label="Main navigation">
             <div class="nav-container">
-                <a href="#home" class="individual-nav-bar" aria-current="page">Home</a>
-                <a href="#about-us" class="individual-nav-bar">About Us</a>
-                <a href="#services" class="individual-nav-bar">Services</a>
-                <a href="#contact" class="individual-nav-bar">Contact Us</a>
+                <a href="#home" class="individual-nav-bar" data-target="home" aria-current="page">Home</a>
+                <a href="#about-us" class="individual-nav-bar" data-target="about-us">About Us</a>
+                <a href="#services" class="individual-nav-bar" data-target="services">Services</a>
+                <a href="#contact" class="individual-nav-bar" data-target="contact-us">Contact Us</a>
             </div>
         </nav>
     </header>
 
     <main>
+        <!--Home Page & Nav Bar-->
         <section id="home" class="home-section">
             <div class="home-header">
                 <h1>Johnson and Dunn Construction Consultants</h1>
@@ -37,6 +38,7 @@
             </div>
         </section>
 
+        <!--About Us Section-->
         <section id="about-us" class="default-section">
             <div class="content-block">
                 <div class="text-content">
@@ -59,6 +61,7 @@
             </div>
         </section>
 
+        <!--Services Section-->
         <section id="services" class="default-section">
             <h2 class="section-header centered">Our Services</h2>
             <div class="hero-image-container">
@@ -67,9 +70,27 @@
                     class="home-image"
                     loading="lazy">
             </div>
+            <div class="service-container">
+                <div class="service-item">
+                    <div class="icon-box">
+                        <div class="icon"><img src="construction-icon.png"></div>
+                    </div>     
+                </div>
+                <div class="service-item">
+                    <div class="icon-box">
+                        <div class="icon"><img src="consult-icon.png"></div>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="icon-box">
+                        <div class="icon"><img src="engineering-icon.png"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="contact" class="default-section">
+        <!--Contact Us Section-->
+        <section id="contact-us" class="default-section">
             <h2 class="section-header">How can We Help?</h2>
             <form action="https://formsubmit.co/test" method="POST">
                 <input type="hidden" name="_subject" value="New Email!">
