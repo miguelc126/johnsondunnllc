@@ -20,6 +20,7 @@
 /* Base HTML settings */
 html {
     scroll-behavior: smooth;  /* Enables smooth scrolling for anchor links */
+    scroll-padding: 10rem; /*Makes navbar scroll 10rem above any section, to make sure it's not obscured*/
     font-size: 16px;         /* Base font size for rem units */
 }
 
