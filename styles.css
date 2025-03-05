@@ -1,7 +1,7 @@
 /* CSS Variables for consistent theming and easy updates */
 :root {
-    --primary-color: #007bff;      /* Main blue color used throughout the site */
-    --primary-dark: #0056b3;       /* Darker blue for hover states and contrast */
+    --primary-color: #85182a;      /* Main blue color used throughout the site */
+    --primary-dark: #720026;       /* Darker blue for hover states and contrast */
     --text-color: #333;
     --background-color: #f4f4f9;
     --white: #fff;
@@ -83,7 +83,7 @@ img {
     padding: 27rem var(--spacing-unit);
     margin-top: -0.4rem;
     text-align: center;
-    background-image: url(placeholder-image.jpg);
+    background-image: url(example1.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -319,82 +319,5 @@ footer {
         height: 250px;
     }
 
-/*Contact us*/
-    input[type="f_name"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-bottom: 10px; 
-}
 
-input[type="l_name"],
-textarea {
-  width: 100%;
-  padding: 8px; 
-  border: 1px solid #ccc;
-  border-radius: 4px; 
-  box-sizing: border-box;
-  margin-bottom: 10px; 
-}
-
-input[type="email"],
-textarea {
-  width: 100%; 
-  padding: 8px; 
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-bottom: 10px; 
-}
-
-input[type="text"],
-textarea {
-  width: 100%; 
-  padding: 8px; 
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-bottom: 10px; 
-
-}
-button {
-    background-color: blue;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-transform: uppercase; 
-    cursor: pointer;
-    transition: background-color 0.3s; 
-  }
-  button:hover {
-    background-color: darkblue; 
-  }
-  .form-container {
-    display: flex;
-    flex-direction: column; 
-  }
-  .form-container .form-group {
-    margin-bottom: 20px;
-  }
-  input[type="file"] {
-    opacity: 0; 
-    width: 0.1px; 
-    height: 0.1px;
-  }
-  label[for="file"] {
-    display: inline-block;
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px; 
-    cursor: pointer;
-  }
-  label[for="file"]:hover {
-    background-color: darkblue;
-  }
-    
 }
