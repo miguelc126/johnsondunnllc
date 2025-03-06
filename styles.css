@@ -191,26 +191,44 @@ img {
     transform: translateY(-5px);  /* Slight lift on hover */
 }
 
-/* Services CSS */
+/* Services Styles */
 .service-container {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     min-height: 1000px;
     margin-top: 10px;
-    border: 8px solid black; /*temp attribute*/
     position: relative;
+    top: -350px;
+    z-index: 1;
+
+    scrollbar-width: thin;
+    overflow-x: auto;
+    overscroll-behavior: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 0.6rem;
+    white-space: nowrap;
+}
+.service-container > * { /*Defines where to start the snap behavior. In this case, the beginning of service-container's children*/
+    scroll-snap-align: start;
 }
 .service-item {
     color: var(--white);
-    min-height: 700px;
+    min-height: 500px;
     min-width: 350px;
-    margin: 5px;
+    margin: 1.5rem;
+    border: 4px var(--primary-dark);
     background-color: var(--primary-color);
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+ 
 }
-.service-item .icon-box {
+.service-item > .icon-box {
     position: absolute;
     top: -50px;
     left: 50%;
@@ -224,7 +242,7 @@ img {
     align-items: center;
     border: 2px solid black;
 }
-.service-item .icon-box icon {
+.service-item > .icon-box > icon {
     height: 100px;
     width: 100px;
 }
