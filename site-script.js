@@ -29,9 +29,7 @@ function setUpInfiniteScroll () {
     });
     container.addEventListener("scroll", handleScroll);
 }
-let ticking = false;
 function handleScroll() {
-    console.log('trigerred')
     const containerWidth = container.scrollWidth / 2;
     if (container.scrollLeft >= containerWidth) {
         container.scrollLeft = 0;
