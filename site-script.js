@@ -17,3 +17,27 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 });
+//Services infinite horizontal scroller functionality
+const container = document.querySelector(".service-container");
+const items = Array.from(container.querySelectorAll(".service-item"));
+
+function setUpInfiniteScroll () {
+
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        container.appendChild(clone);
+    });
+    container.addEventListener("scroll", handleScroll);
+}
+let ticking = false;
+function handleScroll() {
+    console.log('trigerred')
+    const containerWidth = container.scrollWidth / 2;
+    if (container.scrollLeft >= containerWidth) {
+        container.scrollLeft = 0;
+    }
+    else if (container.scrollLeft <= 0) {
+        container.scrollLeft = containerWidth;
+    }
+}
+setUpInfiniteScroll();

@@ -25,6 +25,16 @@
     <main>
         <!--Home Page & Nav Bar-->
         <section id="home" class="home-section">
+            <!-- Add a picture element for responsive image loading -->
+            <picture class="home-background">
+                <!-- Smaller image for mobile -->
+                <source media="(max-width: 480px)" srcset="pexels-ivan-samkov-4491918-small.jpg">
+                <!-- Medium image for tablets -->
+                <source media="(max-width: 768px)" srcset="pexels-ivan-samkov-4491918-medium.jpg">
+                <!-- Default image fallback -->
+                <img src="pexels-ivan-samkov-4491918.jpg" alt="" style="display:none">
+            </picture>
+            
             <div class="home-header">
                 <h1>Johnson and Dunn Construction Consultants</h1>
                 <p class="subtitle">Possible Slogan?</p>
@@ -39,13 +49,13 @@
                     <p class="about-us-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed tellus bibendum, sollicitudin felis dictum, luctus turpis. Mauris eros enim, mollis sed massa ut, aliquet commodo elit.</p>
                 </div>
                 <figure class="section-image-wrapper">
-                    <img src="placeholder-image.jpg" alt="placeholder" class="section-image" loading="lazy">
+                    <img src="stockpexels-reneterp-3990359.jpg" alt="placeholder" class="section-image" loading="lazy">
                 </figure>
             </div>
             
             <div class="content-block">
                 <figure class="section-image-wrapper">
-                    <img src="placeholder-image.jpg" alt="placeholder" class="section-image" loading="lazy">
+                    <img src="pexels-ajaybhargavguduru-977526.jpg" alt="placeholder" class="section-image" loading="lazy">
                 </figure>
                 <div class="text-content">
                     <h2 class="section-header">Mission Statement</h2>
@@ -65,21 +75,29 @@
             </div>
             <div class="service-container">
                 <div class="service-item">
+                    <p tabindex="2">test1</p>
                     <div class="icon-box">
-                        <div class="icon"><img src="construction-icon.png"></div>
+                        <div class="icon"><img src="Stock Imgs/construction-icon.png" alt="icon of a hammer and wrench crossing" loading="lazy" tabindex="1"></div>
                     </div>     
                 </div>
                 <div class="service-item">
+                    <p tabindex="4">test2</p>
                     <div class="icon-box">
-                        <div class="icon"><img src="consult-icon.png"></div>
+                        <div class="icon"><img src="Stock Imgs/consult-icon.png" alt="icon of a support representative" loading="lazy" tabindex="3"></div>
                     </div>
                 </div>
                 <div class="service-item">
+                   <p tabindex="6">test3</p>
                     <div class="icon-box">
-                        <div class="icon"><img src="engineering-icon.png"></div>
+                        <div class="icon"><img src="Stock Imgs/engineering-icon.png" alt="Icon of an engineer wearing a hardhat with gears next to him" loading="lazy" tabindex="5"></div>
                     </div>
                 </div>
-            </div>
+                <div class="service-item">
+                   <p tabindex="8">test4</p>
+                    <div class="icon-box">
+                        <div class="icon"><img src="Stock Imgs/water-damage.png" alt="Icon a house with a leaky roof" loading="lazy" tabindex="7"></div>
+                    </div>
+                </div>
         </section>
 
         <!--Contact Us Section-->
