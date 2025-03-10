@@ -31,7 +31,6 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    margin-top: 90px;
 }
 
 /* Global image settings */
@@ -81,8 +80,9 @@ img {
 
 /* Home Section Styles */
 .home-section {
-    padding: 27rem var(--spacing-unit);
-    margin-top: -0.5rem;
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
     text-align: center;
     background-image: url(pexels-ivan-samkov-4491918.jpg);
     background-repeat: no-repeat;
@@ -90,6 +90,11 @@ img {
     background-size: cover;
     position: relative;
     overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*  */
@@ -108,11 +113,11 @@ img {
 .home-header {
     position: relative;
     z-index: 2;
-    background-color: var(--primary-color-transparent); /* More transparent to blend with image */
+    background-color: var(--primary-color-transparent);
     color: var(--white);
     padding: 3rem 2rem;
     border-radius: 10px;
-    margin: -15rem auto;
+    margin: 0 auto;
     max-width: 900px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -321,13 +326,18 @@ footer {
         gap: 1rem;
     }
 
+    .nav-bar {
+        padding: 0.75rem 0;
+    }
+
     .individual-nav-bar {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
 
     .home-section {
-        padding: 20rem var(--spacing-unit);
+        padding: 0;
+        height: 100vh;
         background-attachment: scroll;
     }
 }
@@ -335,10 +345,9 @@ footer {
 /* Responsive Design - Small Phones */
 @media (max-width: 480px) {
     body {
-        margin-top: 99px;        /* Smaller top margin for mobile */
+        margin-top: 71px;        /* Smaller top margin for mobile */
     }
 
-    /* Further reduced sizes for smallest screens */
     .home-header {
         padding: 2rem 1rem;
     }
@@ -360,8 +369,22 @@ footer {
         height: 250px;
     }
 
-    .home-section{
-        padding: 15rem var(--spacing-unit);
+    .home-section {
+        padding: 0;
+        height: 100vh;
+    }
+
+    .nav-bar {
+        padding: 0.5rem 0;
+    }
+    
+    .nav-container {
+        gap: 0.75rem;
+    }
+    
+    .individual-nav-bar {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -407,7 +430,7 @@ textarea {
 
 }
 button {
-    background-color: blue;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -417,7 +440,7 @@ button {
     transition: background-color 0.3s; 
   }
   button:hover {
-    background-color: darkblue; 
+    background-color: var(--primary-dark); 
   }
   .form-container {
     display: flex;
@@ -433,12 +456,12 @@ button {
   }
   label[for="file"] {
     display: inline-block;
-    background-color: blue;
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border-radius: 5px; 
     cursor: pointer;
   }
   label[for="file"]:hover {
-    background-color: darkblue;
+    background-color: var(--primary-dark);
   }
