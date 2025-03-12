@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             isTransparent = shouldBeTransparent
         }
-        scheduledAnimationFrame = false;
+        scheduledAnimationFrame = false; //Controller variable for throttling
     }
     //Throttled the scroll event listener using requestAnimationFrame
     window.addEventListener('scroll', function() {

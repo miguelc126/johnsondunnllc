@@ -49,13 +49,13 @@ img {
     width: 100%;
     z-index: 1000;          /* Ensures nav stays above other content */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-    transition: background-color 0.3s ease; /*Transition use to match navbar background to home image*/
+    transition: background-color 0.3s ease; /*Transition used to match navbar background to home image*/
 }
 
 /* Navigation Bar Transparency - for home section effect*/
 .nav-bar-transparent {
     background-color: rgb(0, 0, 0, 0.3); /*Semi-transparent black*/
-    box-shadow: 0 2px 10px rbga(0, 0, 0, 0.1) /* or 0.2 for last value*/
+    box-shadow: 0 2px 10px rbga(0, 0, 0, 0.1)
 }
 
 /* Navigation container - centers and spaces navigation items */
