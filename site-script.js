@@ -1,5 +1,41 @@
-//Navigation Bar Functionality
 document.addEventListener("DOMContentLoaded", function () {
+    //Navigation Bar Home Section Fade in animation
+    const navbar = document.querySelector('.nav-bar');
+    const homeSection = document.querySelector('#home');
+    let homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
+    let isTransparent = false;
+    let lastScrollY = window.scrollY;
+    let scheduledAnimationFrame = false;
+    function updateNavbar() {
+        const currentScrollY = window.scrollY;
+        //Updates DOM only when we cross this threshold
+        const shouldBeTransparent = currentScrollY < homeSectionBottom;
+        if (shouldBeTransparent !== isTransparent) {
+            if (shouldBeTransparent) {
+                navbar.classList.add('nav-bar-transparent');
+            } else {
+                navbar.classList.remove('nav-bar-transparent');
+            }
+            isTransparent = shouldBeTransparent
+        }
+        scheduledAnimationFrame = false;
+    }
+    //Throttled the scroll event listener using requestAnimationFrame
+    window.addEventListener('scroll', function() {
+        lastScrollY = this.window.scrollY;
+        if (!scheduledAnimationFrame) {
+            scheduledAnimationFrame = true;
+            this.window.requestAnimationFrame(updateNavbar);
+        }
+    }, { passive: true }); //Passive flag for improved performance
+    //Recalculation of dimensions on window resize
+    window.addEventListener('resize', function() {
+        homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
+        updateNavbar();
+    }, { passive: true });
+    updateNavbar(); //Initial function call on page load
+
+    //Navigation Bar Functionality
     function scrollTo(sectionID) {
         const section = document.getElementById(sectionID);
         if (section) {

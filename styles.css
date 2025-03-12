@@ -49,6 +49,13 @@ img {
     width: 100%;
     z-index: 1000;          /* Ensures nav stays above other content */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    transition: background-color 0.3s ease; /*Transition use to match navbar background to home image*/
+}
+
+/* Navigation Bar Transparency - for home section effect*/
+.nav-bar-transparent {
+    background-color: rgb(0, 0, 0, 0.3); /*Semi-transparent black*/
+    box-shadow: 0 2px 10px rbga(0, 0, 0, 0.1) /* or 0.2 for last value*/
 }
 
 /* Navigation container - centers and spaces navigation items */
@@ -76,6 +83,13 @@ img {
 .individual-nav-bar:focus {
     background-color: var(--primary-dark);
     transform: translateY(-2px);  /* Slight lift effect */
+}
+
+/*Special hover and focus effects for when navbar is over home section*/
+.nav-bar-transparent .individual-nav-bar:hover,
+.nav-bar-transparent .individual-nav-bar:focus {
+    background-color: rgba(255, 255, 255, 0.25); /*A light white sheen on hover*/
+    transform: translateY(-2px);
 }
 
 /* Home Section Styles */
