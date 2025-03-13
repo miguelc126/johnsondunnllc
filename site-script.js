@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let scheduledAnimationFrame = false;
     function updateNavbar() {
         const currentScrollY = window.scrollY;
+
         //Updates DOM only when we cross this threshold
         const shouldBeTransparent = currentScrollY < homeSectionBottom;
         if (shouldBeTransparent !== isTransparent) {
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         scheduledAnimationFrame = false; //Controller variable for throttling
     }
+
     //Throttled the scroll event listener using requestAnimationFrame
     window.addEventListener('scroll', function() {
         lastScrollY = this.window.scrollY;
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.window.requestAnimationFrame(updateNavbar);
         }
     }, { passive: true }); //Passive flag for improved performance
+
     //Recalculation of dimensions on window resize
     window.addEventListener('resize', function() {
         homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
@@ -53,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 });
+
 //Services infinite horizontal scroller functionality
 const container = document.querySelector(".service-container");
 const items = Array.from(container.querySelectorAll(".service-item"));
@@ -66,6 +70,7 @@ function setUpInfiniteScroll () {
     container.addEventListener("scroll", handleScroll);
 }
 function handleScroll() {
+    console.log('handle scroll');
     const containerWidth = container.scrollWidth / 2;
     if (container.scrollLeft >= containerWidth) {
         container.scrollLeft = 0;
