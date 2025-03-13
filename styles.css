@@ -220,7 +220,8 @@ img {
 
     scrollbar-width: thin;
     overflow-x: auto;
-    overscroll-behavior: contain;
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 0.6rem;
     white-space: nowrap;
@@ -256,10 +257,93 @@ img {
     align-items: center;
     border: 2px solid black;
 }
-.service-item > .icon-box > icon {
+.service-item > .icon-box > .icon {
     height: 100px;
     width: 100px;
 }
+.service-item > .icon-box > .icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/*Contact us*/
+input[type="f_name"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-bottom: 10px; 
+}
+
+input[type="l_name"],
+textarea {
+  width: 100%;
+  padding: 8px; 
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  box-sizing: border-box;
+  margin-bottom: 10px; 
+}
+
+input[type="email"],
+textarea {
+  width: 100%; 
+  padding: 8px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-bottom: 10px; 
+}
+
+input[type="text"],
+textarea {
+  width: 100%; 
+  padding: 8px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-bottom: 10px; 
+
+}
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+  }
+  button:hover {
+    background-color: darkblue; 
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column; 
+  }
+  .form-container .form-group {
+    margin-bottom: 20px;
+  }
+  input[type="file"] {
+    opacity: 0; 
+    width: 0.1px; 
+    height: 0.1px;
+  }
+  label[for="file"] {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px; 
+    cursor: pointer;
+  }
+  label[for="file"]:hover {
+    background-color: darkblue;
+  }
     
 /* Footer Styles */
 footer {
@@ -351,82 +435,4 @@ footer {
         height: 250px;
     }
 
-/*Contact us*/
-    input[type="f_name"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-bottom: 10px; 
-}
-
-input[type="l_name"],
-textarea {
-  width: 100%;
-  padding: 8px; 
-  border: 1px solid #ccc;
-  border-radius: 4px; 
-  box-sizing: border-box;
-  margin-bottom: 10px; 
-}
-
-input[type="email"],
-textarea {
-  width: 100%; 
-  padding: 8px; 
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-bottom: 10px; 
-}
-
-input[type="text"],
-textarea {
-  width: 100%; 
-  padding: 8px; 
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-bottom: 10px; 
-
-}
-button {
-    background-color: blue;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-transform: uppercase; 
-    cursor: pointer;
-    transition: background-color 0.3s; 
-  }
-  button:hover {
-    background-color: darkblue; 
-  }
-  .form-container {
-    display: flex;
-    flex-direction: column; 
-  }
-  .form-container .form-group {
-    margin-bottom: 20px;
-  }
-  input[type="file"] {
-    opacity: 0; 
-    width: 0.1px; 
-    height: 0.1px;
-  }
-  label[for="file"] {
-    display: inline-block;
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px; 
-    cursor: pointer;
-  }
-  label[for="file"]:hover {
-    background-color: darkblue;
-  }
-    
 }
