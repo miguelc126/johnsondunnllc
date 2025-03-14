@@ -332,7 +332,7 @@ textarea {
 
 }
 button {
-    background-color: blue;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -342,7 +342,7 @@ button {
     transition: background-color 0.3s; 
   }
   button:hover {
-    background-color: darkblue; 
+    background-color: var(--primary-dark); 
   }
   .form-container {
     display: flex;
@@ -358,14 +358,14 @@ button {
   }
   label[for="file"] {
     display: inline-block;
-    background-color: blue;
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border-radius: 5px; 
     cursor: pointer;
   }
   label[for="file"]:hover {
-    background-color: darkblue;
+    background-color: var(--primary-dark);
   }
     
 /* Footer Styles */
@@ -434,9 +434,6 @@ footer {
 
 /* Responsive Design - Small Phones */
 @media (max-width: 480px) {
-    body {
-        margin-top: 70px;        /* Smaller top margin for mobile */
-    }
 
     /* Further reduced sizes for smallest screens */
     .home-header {
