@@ -1,7 +1,8 @@
 /* CSS Variables for consistent theming and easy updates */
 :root {
-    --primary-color: #007bff;      /* Main blue color used throughout the site */
-    --primary-dark: #0056b3;       /* Darker blue for hover states and contrast */
+    --primary-color: #85182a;
+    --primary-dark: #661724;
+    --primary-color-transparent: #85182ae6; /* e6 makes transparent */
     --text-color: #333;
     --background-color: #f4f4f9;
     --white: #fff;
@@ -30,7 +31,6 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    margin-top: 90px;
 }
 
 /* Global image settings */
@@ -94,24 +94,47 @@ img {
 
 /* Home Section Styles */
 .home-section {
-    padding: 27rem var(--spacing-unit);
-    margin-top: -0.4rem;
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
     text-align: center;
-    background-image: url(placeholder-image.jpg);
+    background-image: url(pexels-ivan-samkov-4491918.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Main header container */
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Ensure content stays above the overlay */
 .home-header {
-    background-color: var(--primary-color);
+    position: relative;
+    z-index: 2;
+    background-color: var(--primary-color-transparent);
     color: var(--white);
     padding: 3rem 2rem;
     border-radius: 10px;
-    margin: -15rem auto;
+    margin: 0 auto;
     max-width: 900px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Main heading styles */
 .home-header h1 {
@@ -405,6 +428,8 @@ footer {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
+
+    
 }
 
 /* Responsive Design - Small Phones */
