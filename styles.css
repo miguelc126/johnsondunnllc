@@ -9,6 +9,8 @@
     --spacing-unit: 1rem;          /* Base unit for consistent spacing */
     --container-width: 1200px;
     --transition-speed: 0.3s;      /* Consistent animation speed */
+    --service-item-width: 350px;
+    --service-item-spacing: 200px;
 }
 
 /* CSS Reset - Ensures consistent styling across browsers */
@@ -229,43 +231,50 @@ img {
 }
 
 /* Services Styles */
-.service-container {
+.service-carousel {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: left;
-    align-items: center;
     min-height: 1000px;
-    margin-top: 10px;
-    position: relative;
-    top: -350px;
-    z-index: 1;
+    overflow: hidden;
+    top: -150px;
+}
 
-    scrollbar-width: thin;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    overscroll-behavior-y: auto;
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 0.6rem;
-    white-space: nowrap;
+.carousel-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
-.service-container > * { /*Defines where to start the snap behavior. In this case, the beginning of service-container's children*/
-    scroll-snap-align: start;
+
+.carousel-track {
+    position: absolute;
+    top: 0;
+    left: 48%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5 ease-out;
 }
+
 .service-item {
+    position: absolute;   
     color: var(--white);
-    min-height: 500px;
-    min-width: 350px;
+    height: 500px;
+    width: var(--service-item-width);
     margin: 1.5rem;
-    border: 4px var(--primary-dark);
+    padding: 20px;
+    border: 4px solid var(--primary-dark); /*temp to be changed*/
     background-color: var(--primary-color);
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
- 
+    transition: all 0.5s ease;
+    top: 50px;
 }
+
 .service-item > .icon-box {
     position: absolute;
     top: -50px;
@@ -280,14 +289,73 @@ img {
     align-items: center;
     border: 2px solid black;
 }
+
 .service-item > .icon-box > .icon {
     height: 100px;
     width: 100px;
 }
+
 .service-item > .icon-box > .icon img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+
+    /* 200 px distance between two, left must account for the 350px item width*/
+.service-item.left {
+    transform: translateX(calc(-1 * var(--service-item-width) - var(--service-item-spacing)));
+    filter: blur(2px);
+    z-index: 1;
+}
+
+.service-item.center {
+    transform: translateX(-50%) translateY(-20px);
+    filter: blur(0);
+    z-index: 2;
+}
+
+.service-item.right {
+    transform: translateX(var(--service-item-spacing));
+    filter: blur(2px);
+    z-index: 1;
+}
+    /*position far items on top of left and right, for simple fade in when brought into view*/
+.service-item.far-left {
+    transform: translateX(calc(-1 * var(--service-item-width) - var(--service-item-spacing)));
+    opacity: 0;
+    z-index: 0;
+}
+
+.service-item.far-right {
+    transform: translateX(var(--service-item-spacing));
+    opacity: 0;
+    z-index: 0;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 33%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 24px;
+    z-index: 10;
+    border: none;
+}
+
+.carousel-button-left {
+    left: 0px;
+}
+
+.carousel-button-right {
+    right: 0px;
 }
 
 /*Contact us*/
