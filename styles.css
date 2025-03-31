@@ -690,7 +690,7 @@ textarea {
 }
 
 #myLinks a:hover {
-    background-color: darkblue;
+    background-color: var(--primary-dark);
 }
 
 /* Hide the main nav bar on smaller screens */
