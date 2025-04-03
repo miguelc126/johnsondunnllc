@@ -673,3 +673,69 @@ textarea {
         opacity: 0.5; /* for better visibility of service items on small screens */
      }
 }
+
+/*Hamburger nav*/
+.hamburger-menu {
+    background-color: var(--primary-color);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: right;
+}
+
+.hamburger-menu .icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#myLinks {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color-transparent);
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px;
+}
+
+#myLinks.show {
+    display: flex;
+}
+
+#myLinks a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+#myLinks a:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Hide the main nav bar on smaller screens */
+@media (max-width: 768px) {
+    .nav-bar {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+/* Show the main nav bar on larger screens */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none; /* Hide hamburger menu */
+    }
+    .nav-bar{
+        display: block;
+    }
+}
+
