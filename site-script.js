@@ -237,20 +237,3 @@ function initServiceCarousel() {
     prevButton.addEventListener('click', moveLeft);
     nextButton.addEventListener('click', moveRight);
 }
-
-
-//hamburger nav
-document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.querySelector(".icon");
-    const menuLinks = document.getElementById("myLinks");
-});
-    menuIcon.addEventListener("click", function () {
-        menuLinks.classList.toggle("show");
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!menuIcon.contains(event.target) && !menuLinks.contains(event.target)) {
-            menuLinks.classList.remove("show");
-        }
-    });
