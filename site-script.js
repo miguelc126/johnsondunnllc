@@ -243,7 +243,7 @@ function initServiceCarousel() {
 document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.querySelector(".icon");
     const menuLinks = document.getElementById("myLinks");
-});
+    
     menuIcon.addEventListener("click", function () {
         menuLinks.classList.toggle("show");
     });
@@ -254,3 +254,4 @@ document.addEventListener("DOMContentLoaded", function () {
             menuLinks.classList.remove("show");
         }
     });
+});
