@@ -60,13 +60,14 @@ img {
     width: 100%;
     z-index: 1000;          /* Ensures nav stays above other content */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-    transition: background-color 0.3s ease; /*Transition used to match navbar background to home image*/
+    transition: background-color var(--transition-speed) ease; /*Transition used to match navbar background to home image*/
 }
 
-/* Navigation Bar Transparency - for home section effect*/
-.nav-bar-transparent {
+/* Navigation Bar Transparency - for transparency when over homes section */
+.nav-bar.nav-bar-transparent, 
+.hamburger-menu.nav-bar-transparent {
     background-color: rgb(0, 0, 0, 0.3); /*Semi-transparent black*/
-    box-shadow: 0 2px 10px rbga(0, 0, 0, 0.1)
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation container - centers and spaces navigation items */
@@ -98,9 +99,56 @@ img {
 
 /*Special hover and focus effects for when navbar is over home section*/
 .nav-bar-transparent .individual-nav-bar:hover,
-.nav-bar-transparent .individual-nav-bar:focus {
+.nav-bar-transparent .individual-nav-bar:focus,
+.nav-bar-transparent #myLinks a:hover {
     background-color: rgba(255, 255, 255, 0.25); /*A light white sheen on hover*/
     transform: translateY(-2px);
+}
+
+/*Hamburger nav*/
+.hamburger-menu {
+    background-color: var(--primary-color);
+    padding: 10px;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color var(--transition-speed) ease; /*Transition used to match navbar background to home image*/
+}
+
+.hamburger-menu .icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#myLinks {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    position: relative;
+    left: 0;
+    padding: 10px;
+}
+
+#myLinks.show {
+    display: flex;
+}
+
+#myLinks a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+}
+
+#myLinks a:hover {
+    background-color: var(--primary-dark);
 }
 
 /* Home Section Styles */
@@ -573,6 +621,16 @@ textarea {
     }
 }
 
+/* Show the main nav bar on larger screens */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none; /* Hide hamburger menu */
+    }
+    .nav-bar{
+        display: block;
+    }
+}
+
 /* Responsive Design - Tablets and Large Phones */
 @media (max-width: 768px) {
     /* Stack content vertically on smaller screens */
@@ -608,6 +666,15 @@ textarea {
     .individual-nav-bar {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+    }
+    
+    /* Hide the main nav bar on smaller screens */
+    .nav-bar {
+        display: none; /* hide navbar for hamburger menu */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
     }
 
     .service-item {
@@ -673,69 +740,3 @@ textarea {
         opacity: 0.5; /* for better visibility of service items on small screens */
      }
 }
-
-/*Hamburger nav*/
-.hamburger-menu {
-    background-color: var(--primary-color);
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    text-align: right;
-}
-
-.hamburger-menu .icon {
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-}
-
-#myLinks {
-    display: none;
-    flex-direction: column;
-    background-color: var(--primary-color-transparent);
-    width: 100%;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    padding: 10px;
-}
-
-#myLinks.show {
-    display: flex;
-}
-
-#myLinks a {
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
-
-#myLinks a:hover {
-    background-color: var(--primary-dark);
-}
-
-/* Hide the main nav bar on smaller screens */
-@media (max-width: 768px) {
-    .nav-bar {
-        display: none;
-    }
-    .hamburger-menu {
-        display: block; /* Show hamburger menu */
-    }
-}
-
-/* Show the main nav bar on larger screens */
-@media (min-width: 769px) {
-    .hamburger-menu {
-        display: none; /* Hide hamburger menu */
-    }
-    .nav-bar{
-        display: block;
-    }
-}
-

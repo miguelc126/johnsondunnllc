@@ -14,29 +14,26 @@
 <body>
     <header>
         <nav class="nav-bar" aria-label="Main navigation">
-            <div class="nav-container">
-                <a href="#home" class="individual-nav-bar" data-target="home" aria-current="page">Home</a>
-                <a href="#about-us" class="individual-nav-bar" data-target="about-us">About Us</a>
-                <a href="#services" class="individual-nav-bar" data-target="services">Services</a>
-                <a href="#contact" class="individual-nav-bar" data-target="contact-us">Contact Us</a>
+            <div class="nav-container" tabindex="1">
+                <a href="#home" class="individual-nav-bar" tabindex="2" aria-current="page">Home</a>
+                <a href="#about-us" class="individual-nav-bar" tabindex="3">About Us</a>
+                <a href="#services" class="individual-nav-bar" tabindex="4">Services</a>
+                <a href="#contact-us" class="individual-nav-bar" tabindex="5">Contact Us</a>
             </div>
         </nav>
         <!-- Hamburger nav -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="hamburger-menu">
-    <span class="icon">&#9776; <!-- Hamburger icon -->
-    <div id="myLinks">
-        <a href="#home" class="individual-nav-bar">Home</a>
-        <a href="#services" class="individual-nav-bar">Services</a>
-        <a href="#about" class="individual-nav-bar">About</a>
-        <a href="#contact" class="individual-nav-bar">Contact</a>
-    </div>
-</span>
-</div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+        <div class="hamburger-menu">
+            <div><a class="icon" tabindex="1">&#9776;</a></div> <!-- Hamburger icon -->
+            <div id="myLinks">
+                <a href="#home" class="individual-nav-bar" tabindex="2">Home</a> 
+                <a href="#about-us" class="individual-nav-bar" tabindex="3">About</a>
+                <a href="#services" class="individual-nav-bar" tabindex="4">Services</a>
+                <a href="#contact-us" class="individual-nav-bar" tabindex="5">Contact</a>
+            </div>
+        </span>
+        </div>
     </header>
 
     <main>
