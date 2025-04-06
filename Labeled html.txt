@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Johnson and Dunn Construction Consultants - Professional Construction Consulting Services">
+    <title>Johnson and Dunn Construction Consultants</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="site-script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar" aria-label="Main navigation">
+            <div class="nav-container" tabindex="0">
+                <a href="#home" class="individual-nav-bar" aria-current="page" aria-label="Go to Home">Home</a>
+                <a href="#about-us" class="individual-nav-bar" aria-label="Go to About Us">About Us</a>
+                <a href="#services" class="individual-nav-bar" aria-label="Go to Services">Services</a>
+                <a href="#contact-us" class="individual-nav-bar" aria-label="Go to Contact Us">Contact Us</a>
+            </div>
+        </nav>
+        <div class="hamburger-menu">
+            <div><a class="icon" href="javascript:void(0);" aria-label="Open menu" aria-expanded="false">&#9776;</a></div>
+            <div id="myLinks">
+                <a href="#home" class="individual-nav-bar" aria-label="Go to Home">Home</a>
+                <a href="#about-us" class="individual-nav-bar" aria-label="Go to About">About</a>
+                <a href="#services" class="individual-nav-bar" aria-label="Go to Services">Services</a>
+                <a href="#contact-us" class="individual-nav-bar" aria-label="Go to Contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="home-section">
+            <picture>
+                <source media="(max-width: 480px)" srcset="Stock Imgs/pexels-ivan-samkov-4491918-small.jpg">
+                <source media="(max-width: 768px)" srcset="Stock Imgs/pexels-ivan-samkov-4491918-medium.jpg">
+                <img src="./Stock Imgs/pexels-ivan-samkov-4491918.jpg" alt="Modern construction project site">
+            </picture>
+            <div class="home-header">
+                <h1>Johnson and Dunn Construction Consultants</h1>
+                <p class="subtitle">Experience the Confidence from Working with Industry Leaders</p>
+            </div>
+        </section>
+
+        <section id="about-us" class="default-section">
+            <div class="content-block">
+                <div class="text-content">
+                    <h2 class="section-header">About Us</h2>
+                    <p class="about-us-text">At Johnson & Dunn LLC, we empower contractors to succeed...</p>
+                </div>
+                <figure class="section-image-wrapper">
+                    <img src="./Stock Imgs/pexels-reneterp-3990359.jpg" alt="Construction consultant with documents" class="section-image" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section id="contact-us" class="default-section">
+            <h2 class="section-header">How Can We Help?</h2>
+            <form action="https://formsubmit.co/test" method="POST">
+                <label for="f_name">First Name</label>
+                <input type="text" id="f_name" name="first_name" placeholder="First Name" required>
+                
+                <label for="l_name">Last Name</label>
+                <input type="text" id="l_name" name="last_name" placeholder="Last Name" required>
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                
+                <label
