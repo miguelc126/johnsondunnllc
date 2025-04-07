@@ -80,6 +80,15 @@ img {
     padding: 0 var(--spacing-unit);
 }
 
+.nav-logo{
+    width: 70px;
+    height: auto;
+    position: absolute;
+    left: var(--spacing-unit);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* Individual navigation links */
 .individual-nav-bar {
     color: var(--white);
@@ -117,6 +126,15 @@ img {
     transition: background-color var(--transition-speed) ease; /*Transition used to match navbar background to home image*/
 }
 
+.hamburger-logo {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    left: var(--spacing-unit);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .hamburger-menu .icon {
     font-size: 24px;
     color: white;
@@ -125,17 +143,21 @@ img {
 }
 
 #myLinks {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
     position: relative;
     left: 0;
     padding: 10px;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
 }
 
 #myLinks.show {
-    display: flex;
+    max-height: 500px;
+    padding: 10px;
 }
 
 #myLinks a {
