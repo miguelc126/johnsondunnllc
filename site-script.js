@@ -93,17 +93,32 @@ function initServiceCarousel() {
     const nextButton = document.getElementById('nextButton');
     const carousel = document.getElementById('carousel');
     const viewport = document.getElementById('carouselViewport');
+    const srControls = document.querySelector('.carousel-controls');
     const totalItems = items.length;
 
     // Current active index (center)
     let activeIndex = 0;
     let isAnimating = false;
 
-    // Associated function calls for carousel
+    // Create indicators buttons for screen readers and keyboard navigation
+    items.forEach((item, index) => {
+        const button = document.createElement('button');
+        button.setAttribute('type', 'button');
+        button.setAttribute('role', 'tab');
+        button.setAttribute('aria-label', `Go to service ${index + 1}`);
+        button.setAttribute('aria-selected', index === activeIndex ? 'true' : 'false');
+        button.classList.add('sr-only');
+        button.addEventListener('click', () => {
+            goToSlide(index);
+        });
+        srControls.appendChild(button);
+    });
+
+    const indicators = Array.from(srControls.querySelectorAll('button'));
+
+    // Associated function calls for carousel setup
 
     updateCarousel();
-    // Allows for keyboard navigation
-    setupKeyboardNavigation();
     // Allows for mobile swipe navigation
     setupTouchEvents();
 
@@ -116,27 +131,39 @@ function initServiceCarousel() {
             const relativePos = (((index - activeIndex) % totalItems) + totalItems) % totalItems;
     
             // Add proper positional class
-            //  *POTENTIALLY change relativePos if statements to be structured with SWITCH statement
-            if (relativePos === 0) {
+           switch(true) {
+            case relativePos === 0:
                 item.classList.add('center');
-                // aria changes
-            } else if (relativePos === totalItems - 1) {
+                item.setAttribute('aria-hidden', 'false');
+                item.tabIndex = 0;
+                break;
+            case relativePos === totalItems - 1:
                 item.classList.add('left');
-                // aria changes
-            } else if (relativePos === 1) {
+                item.setAttribute('aria-hidden', 'false');
+                item.tabIndex = 0;
+                break;
+            case relativePos === 1:
                 item.classList.add('right');
-                // aria changes
-            } else if (relativePos === totalItems - 2) {
+                item.setAttribute('aria-hidden', 'false');
+                item.tabIndex = 0;
+                break;
+            case relativePos === totalItems - 2:
                 item.classList.add('far-left');
-                
-            } else if (relativePos === 2) {
+                item.setAttribute('aria-hidden', 'true');
+                item.tabIndex = -1;
+                break;
+            case relativePos === 2:
                 item.classList.add('far-right');
-               
-            } else {
-                // For any other than 3 displayed, hide them completely
+                item.setAttribute('aria-hidden', 'true');
+                item.tabIndex = -1;
+                break;
+            default:
+                // For any other than the 3 displayed, hide them completely
                 item.style.display = 'none';
-               
-            }
+                item.tabIndex = -1;
+                break;
+           }
+
             // Ensure all classified items are displayed
             if (item.classList.contains('left') ||
                 item.classList.contains('center') ||
@@ -146,6 +173,17 @@ function initServiceCarousel() {
                     item.style.display = 'flex';
                 }
         });
+        
+        // Update accessibility info
+        carousel.setAttribute('aria-activedescendant', items[activeIndex].id || '');
+
+        // Update indicator buttons
+        indicators.forEach((indicator, index) => {
+            indicator.setAttribute('aria-selected', index === activeIndex ? 'true' : 'false');
+        });
+
+        // Announce slide change to screen readers
+        announceSlideChange();
     }
     // Go to specific slide
     function goToSlide(index) {
@@ -154,10 +192,11 @@ function initServiceCarousel() {
     
         activeIndex = index;
         updateCarousel();
+        items[index].focus();
     
         setTimeout(() => {
             isAnimating = false;
-        }, 500); // Match transition duration. Prevents to many updates at once.
+        }, 500); //Prevents to many updates at once.
     }
     
     // Move to previous slide
@@ -170,7 +209,7 @@ function initServiceCarousel() {
     
         setTimeout(() => {
             isAnimating = false;
-        }, 500); // Match transition duration
+        }, 500);
     }
     
     // Move to next slide
@@ -211,45 +250,20 @@ function initServiceCarousel() {
         }
     }
     
-    // Keyboard Navigation
-    function setupKeyboardNavigation() {
-        // Add unique IDs to items if they don't have them
-        items.forEach((item, index) => {
-            if (!item.id) {
-                item.id = `carousel-item-${index}`;
-            }
-        });
-    
-        // Keyboard event listeners
-        carousel.addEventListener('keydown', e => {
-            switch (e.key) {
-                case 'ArrowLeft':
-                    moveLeft();
-                    e.preventDefault();
-                    break;
-                case 'ArrowRight':
-                    moveRight();
-                    e.preventDefault();
-                    break;
-                case 'Home':
-                    goToSlide(0);
-                    e.preventDefault();
-                    break;
-                case 'End':
-                    goToSlide(totalItems - 1);
-                    e.preventDefault();
-                    break;
-            }
-        });
-    
-        // Ensure focus management
-        items.forEach(item => {
-            item.addEventListener('focus', () => {
-                goToSlide(parseInt(item.dataset.index));
-            });
-        });
+    //Announce slide changes to screen readers
+    function announceSlideChange() {
+        const liveRegion = document.getElementById('carousel-live-region');
+        if (!liveRegion) {
+            const newRegion = document.createElement('div');
+            newRegion.id = 'carousel-live-region';
+            newRegion.setAttribute('aria-live', 'polite');
+            newRegion.setAttribute('aria-atomic', 'true');
+            newRegion.className = 'sr-only';
+            document.body.appendChild(newRegion);
+        }
+        const announcement = `Service ${activeIndex + 1} of ${totalItems}, ${items[activeIndex].textContent}`;
+        document.getElementById('carousel-live-region').textContent = announcement;
     }
-
     //Event listeners for buttons
     prevButton.addEventListener('click', moveLeft);
     nextButton.addEventListener('click', moveRight);
