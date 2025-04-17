@@ -15,25 +15,27 @@ function main() {
         lastName = document.getElementById('last_name').value;
         email = document.getElementById('email').value;
         message = document.getElementById('message').value;
-        fetch('https://formsubmit.co/063065a545b20aa0428e08205f0714ed', {
+        fetch('https://formsubmit.co/ajax/063065a545b20aa0428e08205f0714ed', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                FirstName: `${firstName}`,
-                LastName: `${lastName}`,
-                email: `${email}`,
-                message: `${message}`
+                'First Name': `${firstName}`,
+                'Last Name': `${lastName}`,
+                Email: `${email}`,
+                Message: `${message}`
             })
         })
-            .then(createConfirmation)
+            .then(response => response.json())
+            .then(data => createConfirmation(data))
             .catch(error => console.log(error));
         
     });
  
-    function createConfirmation() {
+    function createConfirmation(data) {
+        console.log(data);
         // Create a confirmation message container
         const confirmationMessage = document.createElement('div');
         confirmationMessage.className = 'form-confirmation';
