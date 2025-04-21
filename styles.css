@@ -63,6 +63,7 @@ img {
     transition: background-color var(--transition-speed) ease; /*Transition used to match navbar background to home image*/
 }
 
+
 /* Navigation Bar Transparency - for transparency when over homes section */
 .nav-bar.nav-bar-transparent, 
 .hamburger-menu.nav-bar-transparent {
@@ -84,7 +85,7 @@ img {
     width: 70px;
     height: auto;
     position: absolute;
-    left: var(--spacing-unit);
+    left: 20rem;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -234,7 +235,7 @@ img {
 /* Main Section Styles */
 .default-section {
     max-width: var(--container-width);
-    margin: 4rem auto;
+    margin: 10rem auto;
     padding: 0 var(--spacing-unit);
 }
 
@@ -323,6 +324,7 @@ img {
     overflow: hidden;
     top: -150px;
     border: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: -250px;
 }
 
 .carousel-viewport {
@@ -470,8 +472,9 @@ img {
 /*Contact us*/
 .contact-page {
     max-width: var(--container-width);
-    margin: 4rem auto;
+    margin: 5rem auto;
     padding: 0 var(--spacing-unit);
+    padding-bottom: 8rem;
 }
 
 .contact-layout {
@@ -647,7 +650,7 @@ input[type="checkbox"]:checked::after {
     background-color: var(--primary-color);
     color: var(--white);
     padding: 3rem 1rem 1rem;
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 
 .footer-container {
@@ -730,6 +733,10 @@ input[type="checkbox"]:checked::after {
         --container-width: 90%;   /* Smaller container on smaller screens */
     }
 
+    .nav-logo {
+        left: 2.5rem;
+    }
+
     .service-item {
         scale: 0.9; /*Scaling for carousel items*/
     }
@@ -780,6 +787,20 @@ input[type="checkbox"]:checked::after {
     .content-block.reverse {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    /* Section spacing */
+    .default-section{
+        margin: 4rem auto;
+    }
+
+    .contact-page {
+        margin: 4rem auto;
+        padding-bottom: 4rem;
+    }
+
+    .main-footer {
+        margin-top: 4rem;
     }
 
     /* Full width images on mobile */
@@ -907,6 +928,20 @@ input[type="checkbox"]:checked::after {
 
     .section-header {
         font-size: 1.75rem;
+    }
+
+    /* Section spacing */
+    .default-section {
+        margin: 3rem auto;
+    }
+
+    .contact-page {
+        margin: 3rem auto;
+        padding-bottom: 3rem;
+    }
+
+    .main-footer {
+        margin-top: 3rem;
     }
 
     .about-us-text,
