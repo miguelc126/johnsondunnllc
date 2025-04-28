@@ -274,8 +274,8 @@ function initServiceCarousel() {
 }
 
 function initObfu() {
-    let e = String.fromCharCode(106,111,104,110,115,111,110,46,100,117,110,110,108,108,99,64,103,109,97,105,108,46,99,111,109);
-    document.getElementById('eml').innerText = e;   
+    let e = String.fromCharCode(106,111,104,110,115,111,110,46,100,117,110,110,108,108,99,64) + '&#8203;' + String.fromCharCode(103,109,97,105,108,46,99,111,109);
+    document.getElementById('eml').innerHTML = e;   
 }
 function initModals() {
     let accessibilityModal = document.getElementById('accessibility-modal');
