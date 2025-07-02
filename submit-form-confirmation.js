@@ -20,7 +20,7 @@ function main() {
         if(confirmation && confirmation.trim() !== '') {
             //mailsend();
         } else {
-            fetch('https://formsubmit.co/ajax/063065a545b20aa0428e08205f0714ed', {
+            fetch('https://formsubmit.co/ajax/johnson.dunnllc@gmail.com', {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json',
