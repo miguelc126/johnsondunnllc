@@ -20,7 +20,7 @@ function main() {
         if(confirmation && confirmation.trim() !== '') {
             //mailsend();
         } else {
-            fetch('https://formsubmit.co/ajax/miguelcarredondo126@gmail.com', {
+            fetch('https://formsubmit.co/ajax/miguelca@tutamail.com', {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json',
